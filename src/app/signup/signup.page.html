@@ -14,28 +14,28 @@
     <ion-card-content>
       <ion-item>
         <ion-label>firstName: </ion-label>
-        <ion-input placeholder="firstname"></ion-input>
+        <ion-input placeholder="firstname"[(ngModel)]="user.firstName"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label>lastName: </ion-label>
-        <ion-input placeholder="Username"></ion-input>
+        <ion-input placeholder="Username"[(ngModel)]="user.lastName"></ion-input>
     </ion-item>
     <br>
     <ion-item>
       <ion-label>UserName: </ion-label>
-    <ion-input placeholder="Username"></ion-input>
+    <ion-input placeholder="Username" [(ngModel)]="user.Username"></ion-input>
     </ion-item>
     <br>
     <ion-item>
       <ion-label>Email: </ion-label>
-    <ion-input placeholder="Email"></ion-input>
+    <ion-input placeholder="Email"[(ngModel)]="user.Email"></ion-input>
     
     </ion-item>
 
       <ion-item>
         <ion-label>Password:  </ion-label>
-        <ion-input placeholder="Of length 8-16" type="Password"></ion-input>
+        <ion-input placeholder="Of length 8-16 "[(ngModel)]="user.password" type="Password"></ion-input>
       </ion-item>
       <ion-button (click)="Signup()">Signup</ion-button>
     </ion-card-content>

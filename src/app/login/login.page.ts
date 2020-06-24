@@ -21,10 +21,12 @@ export class LoginPage implements OnInit {
       {headers:new HttpHeaders({"Content-Type":"application/json"})}).subscribe((response) => {
         console.log(response)
         if (response === null){
-          this.showAlert('Log in failed!','Invalid username or password');
+          this.showAlert('Log in failed!','Please enter both username and password');
         }else if (response === "false user") {
-          this.showAlert('Log in failed!','Invalid username or password');
-        }else if (response === 'true user') {
+          this.showAlert('Log in failed!','Invalid user');
+        }else if (response === "true user")
+         {
+
           this.router.navigate(['/home']);
         };
       })
@@ -43,3 +45,4 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/signup']);
   }
 }
+
