@@ -15,9 +15,11 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   LogMeIn(){
-    console.log(this.user);
+    console.log(this.user,"Client: I am sending data to server for login");
       this.http.post("http://localhost:3000/login",this.user,
-      {headers:new HttpHeaders({"Content-Type":"application/json"})}).subscribe((response) => {})
+      {headers:new HttpHeaders({"Content-Type":"application/json"})}).subscribe((response) => {
+        console.log(response);
+      })
     //this.router.navigate(['/home']);
   }
 
