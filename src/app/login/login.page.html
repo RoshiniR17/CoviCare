@@ -7,7 +7,7 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <img src="assets\icon\loginIcon.jfif" alt="covidlogo">
+      <img src="../../assets/icon/loginIcon.jpg" alt="covidlogo">
       <ion-card-title>Login if already registered!</ion-card-title>
       <ion-card-subtitle>New user-click on
         <ion-button (click)="SignUp()">signup</ion-button> </ion-card-subtitle>
@@ -16,12 +16,12 @@
     <ion-card-content>
       <ion-item>
         <ion-label>UserName: </ion-label>
-        <ion-input placeholder="Username"></ion-input>
+        <ion-input placeholder="Username" [(ngModel)]="user.userName"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label>Password:  </ion-label>
-        <ion-input placeholder="Of length 8-16" type="Password"></ion-input>
+        <ion-input placeholder="Of length 8-16" type="Password" [(ngModel)]="user.passWord"></ion-input>
       </ion-item>
       <ion-button (click)="LogMeIn()">Login</ion-button>
     </ion-card-content>
