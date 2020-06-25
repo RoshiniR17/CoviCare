@@ -22,7 +22,7 @@ export class SignupPage implements OnInit {
       this.showAlert('Invalid registration','Please fill in all the details!');
     }else if (response ==="new user") {
            
-      this.router.navigate['/login'];
+      this.router.navigate(['/home']);
     }
   })
 }
