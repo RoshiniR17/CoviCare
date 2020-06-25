@@ -10,6 +10,7 @@
       <img src="assets\icon\loginIcon.jfif" alt="covidlogo">
       
     </ion-card-header>
+
   
     <ion-card-content>
       <ion-item>
@@ -37,8 +38,9 @@
         <ion-label>Password:  </ion-label>
         <ion-input placeholder="Of length 8-16 "[(ngModel)]="user.password" type="Password"></ion-input>
       </ion-item>
-      <ion-button (click)="Signup()">Signup</ion-button>
+      <ion-button color ="secondary"(click)="Signup()">Signup</ion-button>
     </ion-card-content>
   </ion-card>
 
+   
 </ion-content>
