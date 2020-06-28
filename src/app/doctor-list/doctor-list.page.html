@@ -1,21 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>doctorList</ion-title>
+    <ion-title>CovidCare-Doctor's List</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding" color="light">  
-      
-      <ion-button size="large"color="primary" (click)="doctor1()">  
+      <ion-button size="large" color="secondary" expand="block" (click)="notifications()">  
         <ion-icon name="medkit-sharp"></ion-icon>Dr.Floyd
-        <ion-badge color="dark" slot="end">4.9 </ion-badge>  
-      </ion-button>  
-    
-  
-
-    
-      
-      <ion-button size="large"color="primary" (click)="doctor2()">  
+        <ion-badge color="dark" slot="end">4.9</ion-badge>  
+      </ion-button><br>  
+      <ion-button size="large"color="secondary" expand="block" (click)="notify()">  
         <ion-icon name="medkit-sharp"></ion-icon>Dr.Rao
-        <ion-badge color="dark" slot="end">4.6 </ion-badge>  
+        <ion-badge color="dark" slot="end">4.6</ion-badge>  
+      </ion-button><br>
+      <ion-button size="large"color="secondary" expand="block" (click)="notifyAnand()">  
+        <ion-icon name="medkit-sharp"></ion-icon>Dr.Anandhi
+        <ion-badge color="dark" slot="end">4.8</ion-badge>  
       </ion-button>  
-    </ion-content>  
+</ion-content>
+<ion-fab vertical="bottom" horizontal="center" size="small">
+  <ion-fab-button color="secondary">
+    <ion-icon name="menu-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button (click)=gotologin()>
+      <ion-icon name="log-in-outline"></ion-icon> 
+    </ion-fab-button>
+    <ion-fab-button (click)=gotohome()>
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+

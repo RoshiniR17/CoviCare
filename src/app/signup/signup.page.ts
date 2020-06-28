@@ -13,25 +13,17 @@ export class SignupPage implements OnInit {
    user : any={};
   constructor(private router:Router,public http:HttpClient,public alertController: AlertController) { }
 
-  ngOnInit() {
-  }
   Signup(){this.http.post("http://localhost:3000/signup",this.user,
   {headers:new HttpHeaders({"Content-Type":"application/json"})}).subscribe((response) => {
     console.log(response);
-    if(response==="Invalid")
-    {
-      this.showAlert('Signup failed!','try agin!');
-    }
-    else if(response==="null")
-    {
-      this.showAlert('Invalid registration','Please fill in all the details');
-
-    }
-    else if (response==="new user"){
+    if(response === 'userIdAlreadyExists') {
+      this.showAlert('User id already exists','login!');
+    }else if (response === null) {
+      this.showAlert('Invalid registration','Please fill in all the details!');
+    }else if (response ==="new user") {
+           
       this.router.navigate(['/login']);
     }
-    
-  
   })
 }
 
@@ -44,12 +36,9 @@ async showAlert(h,m) {
  
   });
   await alert.present();
-
-
-
-
-    //this.router.navigate(['/login']);
+  //this.router.navigate(['/login']);
   }
   
- 
+  ngOnInit() {
+  }
 }

@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 
+
 @Component({
-  selector: 'app-notify',
-  templateUrl: './notify.component.html',
-  styleUrls: ['./notify.component.scss'],
+  selector: 'app-dr-anand',
+  templateUrl: './dr-anand.component.html',
+  styleUrls: ['./dr-anand.component.scss'],
 })
-export class NotifyComponent implements OnInit {
+export class DrAnandComponent implements OnInit {
 
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {}
   public docinfo={
-    name: "Roa",
-    email:"notifyme2rao@gmail.com"
+    name: "Anandhi",
+    email:"bookme2anandhi@gmail.com"
   }
   async openModal() {
     const modal = await this.modalController.create({
@@ -28,5 +29,5 @@ export class NotifyComponent implements OnInit {
       console.log('Sending: ', this.docinfo);
     });
   }
-
+  
 }

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { PopoverController } from '@ionic/angular';  
+import { Component, OnInit } from '@angular/core'; 
 import {Router} from '@angular/router';
-//import { NotificationsComponent } from '../notifications/notifications.component';  
-//import { NotifyComponent } from '../notify/notify.component';
-
+import { PopoverController } from '@ionic/angular';
+import { NotificationsComponent } from '../notifications/notifications.component';  
+import { NotifyComponent } from '../notify/notify.component';
+import { DrAnandComponent } from '../dr-anand/dr-anand.component';
 @Component({
   selector: 'app-doctor-list',
   templateUrl: './doctor-list.page.html',
@@ -11,40 +11,43 @@ import {Router} from '@angular/router';
 })
 export class DoctorListPage {
 
-  /*constructor(public popoverCtrl: PopoverController) {}
+  constructor(private router:Router,public popoverCtrl: PopoverController) {}
+  ngOnInit() {
+  }
+  gotohome(){
+    this.router.navigate(['/home']);
+  }
+  gotologin(){
+    this.router.navigate(['/login']);
+  }
   async notifications(ev: any) {  
     const popover = await this.popoverCtrl.create({  
         component: NotificationsComponent,  
         event: ev,  
         animated: true,  
         showBackdrop: true  
-    }); */ 
-
-    constructor(private router:Router) {}
-  ngOnInit() {
+    });
+    return await popover.present();
   }
-  doctor1(){
-    this.router.navigate(['/doctor1']);
-  }
-  doctor2(){
-    this.router.navigate(['/doctor2']);
-  }
-
-
-
-
-  
-  /*   async notifiy2(ev: any) {  
-     const popover2 = await this.popoverCtrl.create({  
-         component: NotifyComponent,  
-         event: ev,  
+  async notify(ev: any) {  
+     const popover2= await this.popoverCtrl.create({  
+        component: NotifyComponent,  
+        event: ev,  
         animated: true,  
         showBackdrop: true  
      });
-
-
-    return await popover.present();  */
+    return await popover2.present();
+  }
+  async notifyAnand(ev: any) {  
+    const popover3= await this.popoverCtrl.create({  
+       component: DrAnandComponent,  
+       event: ev,  
+       animated: true,  
+       showBackdrop: true  
+    });
+   return await popover3.present();
   }  
+}  
 
   
   
