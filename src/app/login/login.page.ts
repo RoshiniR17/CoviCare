@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
         }else if (response === "true user")
          {
 
-          this.router.navigate(['/home']);
+          this.router.navigate(['/doctor-list']);
         };
       })
   }

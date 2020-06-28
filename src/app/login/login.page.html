@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>CovidCare-Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,22 +9,24 @@
     <ion-card-header>
       <img src="../../assets/icon/loginIcon.jpg" alt="covidlogo">
       <ion-card-title>Login if already registered!</ion-card-title>
-      <ion-card-subtitle>New user-click on
-        <ion-button (click)="SignUp()">signup</ion-button> </ion-card-subtitle>
+      <ion-card-subtitle>New user - click on SIGNUP </ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       <ion-item>
-        <ion-label>Email: </ion-label>
-        <ion-input placeholder="Email" [(ngModel)]="user.Email"></ion-input>
+        <ion-input type="email" placeholder="Email address" [(ngModel)]="user.Email"></ion-input>
       </ion-item>
       <br>
       <ion-item>
-        <ion-label>Password:  </ion-label>
-        <ion-input placeholder="Of length 8-16" type="Password" [(ngModel)]="user.password"></ion-input>
+        <ion-input type="Password" placeholder="Password"  [(ngModel)]="user.password"></ion-input>
       </ion-item>
-      <ion-button (click)="LogMeIn()">Login</ion-button>
+      <ion-button (click)="LogMeIn()" expand="block" color="secondary">Login</ion-button>
     </ion-card-content>
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button (click)="SignUp()">
+        <ion-label>Signup</ion-label>
+      </ion-segment-button>
+    </ion-segment> 
   </ion-card>
 
 </ion-content>

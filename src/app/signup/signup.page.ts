@@ -22,7 +22,7 @@ export class SignupPage implements OnInit {
       this.showAlert('Invalid registration','Please fill in all the details!');
     }else if (response ==="new user") {
            
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     }
   })
 }
@@ -36,11 +36,7 @@ async showAlert(h,m) {
  
   });
   await alert.present();
-
-
-
-
-    //this.router.navigate(['/login']);
+  //this.router.navigate(['/login']);
   }
   
   ngOnInit() {

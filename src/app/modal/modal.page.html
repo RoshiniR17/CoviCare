@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enter Patient Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating" color="secondary">Patient Name:</ion-label>
+        <ion-input [(ngModel)]="patient.name"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label position="floating" color="secondary">Patient Age:</ion-label>
+        <ion-input [(ngModel)]="patient.age"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label position="floating" color="secondary">Mobile number:</ion-label>
+        <ion-input [(ngModel)]="patient.mobile"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label position="floating" color="secondary">Email Adddress:</ion-label>
+        <ion-input [(ngModel)]="patient.email"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label position="floating" color="secondary">Choose Date:</ion-label>
+        <ion-datetime [(ngModel)]="mydate" (ionChange)="dateChanged($event)" displayFormat="MMM DD, YYYY hh:mm A" min="2020-03-01" max="2022-12-31"></ion-datetime>
+      </ion-item><br>
+
+      <ion-button (click)="mail()" expand="block" color="secondary">Confirm</ion-button>
+    </ion-card-content>
+  </ion-card>  
+</ion-content>

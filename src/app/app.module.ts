@@ -5,17 +5,21 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-//import {EmailComposer}from '@ionic-native/email-composer/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpService } from './Shared/http.service';
+import { NotificationsComponent } from './notifications/notifications.component';  
+import { NotifyComponent } from './notify/notify.component';
+import { DrAnandComponent } from './dr-anand/dr-anand.component';
+import { ModalPage } from './modal/modal.page';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent,NotificationsComponent,NotifyComponent, DrAnandComponent,ModalPage],
+  entryComponents: [ ModalPage ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
@@ -25,6 +29,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule],
   providers: [
     StatusBar,
+    HttpService,
     SplashScreen,
     
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

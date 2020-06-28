@@ -12,8 +12,8 @@ export class HomePage implements OnInit {
 constructor(private router:Router) {}
   ngOnInit() {
   }
-  FixAppoinment(){
-    this.router.navigate(['/doctor-list']);
+  patientLogin(){
+    this.router.navigate(['/login']);
   }
 
 }
